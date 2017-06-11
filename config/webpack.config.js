@@ -7,7 +7,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var config = {
     entry:{
         'main': path.resolve(__dirname, '../src/app.js'),
-        vendor:['react','react-dom','react-router']
+        // vendor:['react','react-dom','react-router']
     },
 
     output: {
@@ -20,7 +20,7 @@ var config = {
         rules: [ {
             test: /\.jsx?$/,
             exclude: /node_modules/,
-            include:[path.resolve(__dirname,'src')],
+            include:[path.resolve(__dirname,'../src')],
             loader: 'babel-loader',
 
             query: {
@@ -29,13 +29,13 @@ var config = {
         },
             {
                 test: /\.css$/,
-                include:[path.resolve(__dirname,'src')],
+                include:[path.resolve(__dirname,'../src')],
                 use:[
                     {
                         loader: "style-loader"
                     },
                     {
-                        loader:"css-loader?modules"
+                        loader:"css-loader?modules&localIdentName=[name]_[local]"
                     },
                     {
                         loader:"postcss-loader",        //给css属性加私有前缀
@@ -52,13 +52,13 @@ var config = {
             },
             {
             test: /\.less$/,
-            include:[path.resolve(__dirname,'src')],
+            include:[path.resolve(__dirname,'../src')],
             use:[
                 {
                     loader: "style-loader"
                 },
                 {
-                    loader:"css-loader?modules"
+                    loader:"css-loader?modules&localIdentName=[name]_[local]"
                 },
                 {
                     loader:"postcss-loader",        //给css属性加私有前缀

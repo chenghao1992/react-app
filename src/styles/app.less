@@ -1,0 +1,52 @@
+
+:global {
+  *{
+    padding: 0;
+    margin: 0;
+  }
+  html,body{
+    width:100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  #root{
+    width:100%;
+    height: 100%;
+    position:relative;
+    >div{
+      height: 100%;
+      position:relative;
+    }
+  }
+
+  .header{
+    width:100%;
+    height: 44px;
+    background: salmon;
+    text-align: center;
+    line-height: 44px;
+    position: absolute;
+    top:0;
+  }
+  .footer{
+    width:100%;
+    height: 49px;
+    background: cadetblue;
+    text-align: center;
+    line-height: 49px;
+    bottom: 0;
+    position: absolute;
+  }
+  .content{
+    width:100%;
+    position: absolute;
+    top:44px;
+    bottom:49px;
+    background: mistyrose;
+    >div{
+      height: 100%;
+      overflow: auto;
+    }
+  }
+}

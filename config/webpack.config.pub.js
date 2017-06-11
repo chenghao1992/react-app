@@ -9,18 +9,18 @@ var CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = function(env){
     return{
         entry:{
-            'main': path.resolve(__dirname, 'src/index.js'),
+            'main': path.resolve(__dirname, '../src/app.js'),
             'vendors':'react',
         },
         output: {
-            path: path.resolve(__dirname, 'build/'),
+            path: path.resolve(__dirname, '../build/'),
             filename: '[hash].[name].js',
         },
         module: {
             loaders: [ {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                include:[path.resolve(__dirname,'src')],
+                include:[path.resolve(__dirname,'../src')],
                 loader: 'babel-loader',
                 query: {
                     presets: ['es2015','react','stage-0','stage-1','stage-2','stage-3']
@@ -29,7 +29,7 @@ module.exports = function(env){
                 //分离出并压缩css文件需要和下面的ExtractTextPlugin配合使用 同时给css属性加私有前缀  这段配置很复杂
                 {
                     test: /\.css$/,
-                    include:[path.resolve(__dirname,'src')],
+                    include:[path.resolve(__dirname,'../src')],
                     loader:ExtractTextPlugin.extract({
                         fallback:"style-loader",
                         use:[{
