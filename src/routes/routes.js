@@ -1,6 +1,8 @@
 /**
  *	路由
  */
+import {connect} from 'react-redux';
+
 import Layout from '../components/layout'
 import Home from '../components/Home/Home'
 
@@ -20,6 +22,15 @@ const Routes = {
                         require.ensure([], (require)=>{
                             cb(null, require('../components/Home/Life').default)
                         })
+                    },
+                    onEnter: function({params, dispatch }, replace){
+                        console.log('dispatch:',dispatch)
+                        // dispatch({
+                        //     type:'enterDispatch',
+                        //     test:'enterDispatch'
+                        //
+                        // })
+
                     }
                 },
                 {

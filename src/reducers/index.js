@@ -3,8 +3,10 @@
  */
 import { combineReducers } from 'redux'
 import defaultPage from './defaultPage'
+import Home from './Home/Home'
 
 const rootReducers = combineReducers({
-    defaultPage
+    defaultPage,
+    Home
 })
 export default rootReducers
