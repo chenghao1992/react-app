@@ -63,7 +63,23 @@ const Routes = {
             path: '/technology',
             getComponent (nextState, cb) {
                 require.ensure([], (require)=>{
+                    cb(null, require('../components/Technology/Technology').default)
+                })
+            }
+        },
+        {
+            path: '/testPage',
+            getComponent (nextState, cb) {
+                require.ensure([], (require)=>{
                     cb(null, require('../containers/Technology/defaultPage').default)
+                })
+            }
+        },
+        {
+            path: '/jqPage',
+            getComponent (nextState, cb) {
+                require.ensure([], (require)=>{
+                    cb(null, require('../components/Technology/jqPage').default)
                 })
             }
         },

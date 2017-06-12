@@ -2,7 +2,7 @@
  * Created by 12718 on 2017/6/11.
  */
 
-const Home=(state={list:[1,2,3]},action)=>{
+const Home=(state={list:[{title:'',url:''}]},action)=>{
     switch (action.type) {
         case 'enterDispatch':
             return {
