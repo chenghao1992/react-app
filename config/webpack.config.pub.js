@@ -33,7 +33,7 @@ module.exports = function(env){
                     loader:ExtractTextPlugin.extract({
                         fallback:"style-loader",
                         use:[{
-                            loader:"css-loader",
+                            loader:"css-loader?modules",
                             options: {minimize: true}
                         },{
                             loader:"postcss-loader",        //给css属性加私有前缀
@@ -48,11 +48,11 @@ module.exports = function(env){
                     }),
                 },
                 {
-                test:/\.(jpg|png|gif|svg)$/i,
+                test:/\.(jpg|png|gif|svg|jpeg)$/i,
                 loader:"file-loader"
             },{
                 test: /\.less$/,
-                loader: 'style-loader!css-loader!less-loader'
+                loader: 'style-loader!css-loader?modules!less-loader'
             }]
         },
         devtool:'cheap-module-source-map',
