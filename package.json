@@ -29,6 +29,7 @@
     "babel-runtime": "^6.23.0",
     "classnames": "^2.2.5",
     "clean-webpack-plugin": "^0.1.16",
+    "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.27.3",
     "cssnano": "^3.10.0",
     "es6-promise": "^4.1.0",

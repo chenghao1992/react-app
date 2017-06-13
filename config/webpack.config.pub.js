@@ -4,7 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var node_modules = path.resolve(__dirname, 'node_modules');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
-
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = function(env){
     return{
@@ -94,6 +94,10 @@ module.exports = function(env){
                 }
             }),
             // new webpack.HotModuleReplacementPlugin(),
+            new CopyWebpackPlugin([
+                { from: path.resolve(__dirname,'../src/data'), to: '../build/src/data' },
+                { from: path.resolve(__dirname,'../src/images'), to: '../build/src/images' }
+            ])
 
         ]
 
