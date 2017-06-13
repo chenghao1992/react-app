@@ -14,7 +14,7 @@ module.exports = function(env){
         },
         output: {
             path: path.resolve(__dirname, '../build/'),
-            filename: '[hash].[name].js',
+            filename: '[name].[chunkhash:5].js',
         },
         module: {
             loaders: [ {
@@ -66,7 +66,7 @@ module.exports = function(env){
                     removeAttributeQuotes: true
                 }
             }),
-            new CleanWebpackPlugin(['build']),   //用于在building之前删除你以前build过的文件
+            new CleanWebpackPlugin(['../build/']),   //用于在building之前删除你以前build过的文件
             // 分离第三方应用插件,name属性会自动指向entry中vendros属性，filename属性中的文件会自动构建到output中的path属性下面
             new webpack.optimize.CommonsChunkPlugin({name: 'commons', filename: 'commons.js'}),
             // 可以新建多个抽离样式的文件，这样就可以有多个css文件了。
